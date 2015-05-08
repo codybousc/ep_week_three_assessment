@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe(Stylist) do
-  describe("#stylist_name") do
+  describe("#name") do
     it("returns stylist name") do
       test_stylist = Stylist.new({:name => "Lordy Lord", :id => nil})
-      expect(test_stylist.stylist_name()).to(eq("Lordy Lord"))
+      expect(test_stylist.name()).to(eq("Lordy Lord"))
     end
   end
 
@@ -33,7 +33,7 @@ describe("#id") do
     test_stylist = Stylist.new({:name => "Lordy Lord", :id => nil})
     test_stylist.save_stylist()
     all_stylists = Stylist.all_stylists
-    expect(all_stylists[0].stylist_id).to(be_an_instance_of(Fixnum))
+    expect(all_stylists[0].id).to(be_an_instance_of(Fixnum))
   end
 end
 
@@ -41,10 +41,10 @@ describe("#update_stylist") do
   it("alters the stylist name") do
     test_stylist = Stylist.new({:name => "Lordy Lord", :id => nil})
     test_stylist.save_stylist()
-    old_id = test_stylist.stylist_id
-    new_stylist = test_stylist.update_stylist("Looooordy Lord", test_stylist.stylist_id)
-    expect(new_stylist.stylist_id).to(eq((test_stylist.stylist_id)))
-    expect(new_stylist.stylist_name).to(eq("Looooordy Lord"))
+    old_id = test_stylist.id
+    new_stylist = test_stylist.update_stylist("Looooordy Lord", test_stylist.id)
+    expect(new_stylist.id).to(eq((test_stylist.id)))
+    expect(new_stylist.name).to(eq("Looooordy Lord"))
   end
 end
 

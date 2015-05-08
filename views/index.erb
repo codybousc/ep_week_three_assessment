@@ -1,0 +1,11 @@
+<h1>Welcome to Señor Salon</h1>
+
+<% @stylists.each do |stylist| %>
+<li> <a href = "/stylists/"<%= stylist.id()%>"><%= stylist.name() %></a></li>
+<% end %>
+
+<% @stylists.each do |stylist| %>
+  <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.name() %></a></li>
+  <% end %>
+
+<a href = "/index">Add New Stylist</a>

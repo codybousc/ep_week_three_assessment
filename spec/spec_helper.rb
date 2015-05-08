@@ -1,6 +1,6 @@
 require 'rspec'
 require 'client'
-require 'stylist'
+require './lib/stylist'
 require 'pg'
 require 'pry'
 

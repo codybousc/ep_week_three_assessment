@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe(Client) do
-  describe("#client_name") do
+  describe("#name") do
     it("returns client name") do
       test_client = Client.new({:name => "Lordy Lord", :id => nil})
-      expect(test_client.client_name()).to(eq("Lordy Lord"))
+      expect(test_client.name()).to(eq("Lordy Lord"))
     end
   end
 
@@ -44,7 +44,7 @@ describe("#update_client") do
     old_id = test_client.client_id
     new_client = test_client.update_client("Looooordy Lord", test_client.client_id)
     expect(new_client.client_id).to(eq((test_client.client_id)))
-    expect(new_client.client_name).to(eq("Looooordy Lord"))
+    expect(new_client.name).to(eq("Looooordy Lord"))
   end
 end
 
