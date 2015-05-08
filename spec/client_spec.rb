@@ -47,4 +47,15 @@ describe("#update_client") do
     expect(new_client.client_name).to(eq("Looooordy Lord"))
   end
 end
+
+describe("#delete_client")  do
+    it("deletes a client from the database") do
+      test_client = Client.new({:name => "OH Lord", :id => nil})
+      test_client.save_client()
+      test_client2 = Client.new({:name => "Lordy Lord", :id => nil})
+      test_client2.save_client()
+      test_client2.delete_client()
+      expect(Client.all_clients).to(eq([test_client]))
+    end
+  end
 end

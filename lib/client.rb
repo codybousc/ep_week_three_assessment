@@ -35,4 +35,8 @@ class Client
     new_id = returned_client.first().fetch("id").to_i
     new_client = Client.new({:name => new_name, :id => new_id})
   end
+
+  define_method(:delete_client) do
+  DB.exec("DELETE FROM client WHERE id = '#{self.client_id}'")
+end
 end
